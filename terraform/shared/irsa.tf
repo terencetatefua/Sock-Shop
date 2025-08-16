@@ -1,9 +1,9 @@
-# Create the policy JSON you want to attach
+# IAM policy we attach to the IRSA role (unchanged)
 data "aws_iam_policy_document" "secretsmanager_read" {
   statement {
-    sid     = "SecretsManagerRead"
-    effect  = "Allow"
-    actions = ["secretsmanager:GetSecretValue"]
+    sid       = "SecretsManagerRead"
+    effect    = "Allow"
+    actions   = ["secretsmanager:GetSecretValue"]
     resources = ["*"]
   }
 }
@@ -15,13 +15,16 @@ resource "aws_iam_policy" "secretsmanager_read" {
   tags        = local.common_tags
 }
 
-# IRSA for Secrets Manager access (pods that need to read secrets)
+# ✅ FIX: map(string) for role_policy_arns
 module "irsa_secrets_manager" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
   version = "5.39.1"
 
-  role_name         = "irsa-secretsmanager-${var.environment}"
-  role_policy_arns  = [aws_iam_policy.secretsmanager_read.arn]
+  role_name = "irsa-secretsmanager-${var.environment}"
+
+  role_policy_arns = {
+    secrets_read = aws_iam_policy.secretsmanager_read.arn
+  }
 
   oidc_providers = {
     main = {

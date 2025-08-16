@@ -2,7 +2,7 @@
 module "rds" {
   count   = var.enable_rds ? 1 : 0
   source  = "terraform-aws-modules/rds-aurora/aws"
-  version = "7.13.1"
+  version = "9.14.0"
 
   name           = "sockshop-aurora-${var.environment}"
   engine         = "aurora-mysql" # or aurora-postgresql
