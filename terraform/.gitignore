@@ -16,3 +16,4 @@ terraform.rc
 
 # Keep lockfile tracked
 !.terraform.lock.hcl
+.terraform/
