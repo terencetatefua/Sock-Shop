@@ -19,19 +19,29 @@ resource "aws_security_group" "efs" {
     protocol        = "tcp"
     security_groups = [module.eks.node_security_group_id]
   }
+
   egress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
+    from_port  = 0
+    to_port    = 0
+    protocol   = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = local.common_tags
 }
 
+# Use static keys (AZ names) with apply-time values (subnet IDs)
+locals {
+  efs_mt_map = {
+    for idx, az in local.azs : az => {
+      subnet_id = module.vpc.private_subnets[idx]
+    }
+  }
+}
+
 resource "aws_efs_mount_target" "private" {
-  for_each       = toset(module.vpc.private_subnets)
+  for_each       = local.efs_mt_map
   file_system_id = aws_efs_file_system.main.id
-  subnet_id      = each.value
+  subnet_id      = each.value.subnet_id
   security_groups = [aws_security_group.efs.id]
 }

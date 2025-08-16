@@ -26,17 +26,13 @@ output "lb_sg_id" {
   value = aws_security_group.lb_public.id
 }
 
-###############################################
-# RDS / Aurora (only when enable_rds = true)
-###############################################
-# Writer endpoint (Aurora cluster endpoint)
+# Aurora – only when enable_rds = true
 output "rds_endpoint" {
   value       = var.enable_rds ? module.rds[0].cluster_endpoint : null
   description = "Aurora writer endpoint (null if enable_rds=false)"
 }
 
-# Reader endpoint (Aurora read-only endpoint)
 output "rds_reader_endpoint" {
-  value       = var.enable_rds ? module.rds[0].reader_endpoint : null
+  value       = var.enable_rds ? module.rds[0].cluster_reader_endpoint : null
   description = "Aurora reader endpoint (null if enable_rds=false)"
 }

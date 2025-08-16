@@ -2,7 +2,7 @@ region             = "us-east-2"
 environment        = "prod"
 eks_cluster_name   = "sockshop-prod"
 node_instance_type = "m5.large"
-# kubeconfig_path    = "/home/ubuntu/.kube/config"
+kubeconfig_path    = "/c/Users/mispa/.kube/config"
 
 tags = { Project = "SockShop", Owner = "Platform" }
 

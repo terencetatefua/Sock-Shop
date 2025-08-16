@@ -8,10 +8,12 @@ resource "helm_release" "aws_efs_csi_driver" {
   namespace  = "kube-system"
   version    = "2.6.7"
 
-  # Use 'set' as an argument (list of maps), not blocks
-  set = [
-    { name = "controller.serviceAccount.create", value = "true" }
-  ]
+  set {
+    name  = "controller.serviceAccount.create"
+    value = "true"
+  }
+
+  depends_on = [module.eks]
 }
 
 #########################################
@@ -23,27 +25,26 @@ resource "helm_release" "aws_load_balancer_controller" {
   chart      = "aws-load-balancer-controller"
   namespace  = "kube-system"
 
-  # Required config
-  set = [
-    { name = "clusterName",           value = module.eks.cluster_name },
-    { name = "region",                value = var.region },
-    { name = "vpcId",                 value = module.vpc.vpc_id },
-    { name = "serviceAccount.create", value = "true" }
-  ]
+  # Values via repeated 'set' blocks
+  set {
+    name  = "clusterName"
+    value = tostring(module.eks.cluster_name)
+  }
 
-  # If you later add an IRSA role for ALB Controller, annotate the SA like this:
-  # set = concat(
-  #   [
-  #     { name = "clusterName", value = module.eks.cluster_name },
-  #     { name = "region",      value = var.region },
-  #     { name = "vpcId",       value = module.vpc.vpc_id },
-  #     { name = "serviceAccount.create", value = "true" }
-  #   ],
-  #   [
-  #     {
-  #       name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-  #       value = module.alb_irsa.iam_role_arn  # <- your IRSA role output
-  #     }
-  #   ]
-  # )
+  set {
+    name  = "region"
+    value = var.region
+  }
+
+  set {
+    name  = "vpcId"
+    value = tostring(module.vpc.vpc_id)
+  }
+
+  set {
+    name  = "serviceAccount.create"
+    value = "true"
+  }
+
+  depends_on = [module.eks]
 }
