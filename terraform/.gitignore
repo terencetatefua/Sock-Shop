@@ -1,66 +1,25 @@
-# --- Terraform ---------------------------------------------------------------
-.terraform/
-**/.terraform/*
-terraform.tfstate
-terraform.tfstate.*
-*.tfplan
-*.plan
-plan.out
+# Local Terraform dirs
+**/.terraform/
+
+# Terraform state
+*.tfstate
+*.tfstate.*
 crash.log
 crash.*.log
 
-# Keep the provider lockfile versioned (best practice)
-!.terraform.lock.hcl
-
-# Local overrides (avoid committing)
+# Override files
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Sensitive inputs (avoid committing tfvars)
+# Variable files with secrets
 *.tfvars
 *.tfvars.json
 
-# --- Generated files ---------------------------------------------------------
-# ENIConfig YAMLs and any other generated manifests/artifacts
-**/generated/
-**/generated/*
+# Plan files
+*.tfplan
 
-# --- Kubernetes / kubeconfig -------------------------------------------------
-.kube/
-**/*.kubeconfig
-**/kubeconfig
-
-# --- Helm --------------------------------------------------------------------
-# Keep your values/*.yaml in git unless they contain secrets
-# If you maintain secret overlays, ignore them here:
-helm/values/*-secrets.yaml
-**/tmp/
-**/*.tgz
-
-# --- Secrets / certs ---------------------------------------------------------
-.env
-.env.*
-*.pem
-*.key
-*.p12
-*.csr
-*.crt
-
-# --- IDE / Editor ------------------------------------------------------------
-.vscode/
-.idea/
-*.code-workspace
-*.swp
-*.swo
-
-# --- OS junk -----------------------------------------------------------------
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# --- Optional: tooling caches ------------------------------------------------
-node_modules/
-.venv/
-venv/
+# CLI config
+.terraformrc
+terraform.rc
