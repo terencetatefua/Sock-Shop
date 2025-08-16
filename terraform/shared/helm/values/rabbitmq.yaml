@@ -1,0 +1,6 @@
+auth:
+  username: rabbitmq
+  password: CHANGEME  # move to a secret if exposing publicly
+persistence:
+  enabled: true
+  size: 5Gi
