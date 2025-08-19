@@ -37,17 +37,15 @@ resource "null_resource" "wait_for_cluster" {
       echo "✅ Testing Kubernetes API reachability..."
       : > err.txt
       for i in {1..120}; do  # up to ~10m
-        # 1) /version often returns 401/403 when API is up (that's fine)
+        # /version often returns 401/403 when API is up (that's fine)
         if KUBECONFIG="$KCFG_POSIX" kubectl get --raw=/version --request-timeout=5s >/dev/null 2>err.txt; then
           echo "🎉 Kubernetes API reachable (/version)."; exit 0
         fi
 
-        # 2) /livez check
         if KUBECONFIG="$KCFG_POSIX" kubectl get --raw=/livez --request-timeout=5s >/dev/null 2>>err.txt; then
           echo "🎉 Kubernetes API reachable (/livez)."; exit 0
         fi
 
-        # 3) kubectl version (without --short, it's deprecated)
         if KUBECONFIG="$KCFG_POSIX" kubectl version --request-timeout=5s >/dev/null 2>>err.txt; then
           echo "🎉 Kubernetes API reachable (kubectl version)."; exit 0
         fi
@@ -69,6 +67,6 @@ resource "null_resource" "wait_for_cluster" {
     interpreter = ["bash", "-lc"]
   }
 
-  # Wait for the nested eks module exposed by the shared module
-  depends_on = [module.shared.eks_module]
+  # ✅ depend on the module, not a module output
+  depends_on = [module.shared]
 }

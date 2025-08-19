@@ -53,24 +53,23 @@ output "rds_reader_endpoint" {
 }
 
 ############################################
-# IRSA Roles (prefer variables; fall back if resources exist)
+# IRSA Roles (emit variables only to avoid referencing undeclared resources)
 ############################################
 
 output "irsa_role_arn_vpc_cni" {
-  value       = try(aws_iam_role.irsa_vpc_cni.arn, var.irsa_role_arn_vpc_cni)
-  description = "IAM role ARN used by the VPC CNI add-on (variable or created resource)."
+  value       = var.irsa_role_arn_vpc_cni
+  description = "IAM role ARN used by the VPC CNI add-on (if provided)."
 }
 
 output "irsa_role_arn_efs_csi" {
-  value       = try(aws_iam_role.irsa_efs_csi.arn, var.irsa_role_arn_efs_csi)
-  description = "IAM role ARN used by the EFS CSI add-on (variable or created resource)."
+  value       = var.irsa_role_arn_efs_csi
+  description = "IAM role ARN used by the EFS CSI add-on (if provided)."
 }
 
 output "irsa_role_arn_ebs_csi" {
-  value       = try(aws_iam_role.irsa_ebs_csi[0].arn, var.irsa_role_arn_ebs_csi)
-  description = "IAM role ARN used by the EBS CSI add-on (variable or created resource)."
+  value       = var.irsa_role_arn_ebs_csi
+  description = "IAM role ARN used by the EBS CSI add-on (if provided)."
 }
-
 
 ############################################
 # Raw EKS Module (if needed for advanced use)

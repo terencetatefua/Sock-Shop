@@ -1,5 +1,7 @@
 locals {
+  ############################################################
   # Common tags
+  ############################################################
   common_tags = merge(
     {
       Environment = var.environment
@@ -13,7 +15,6 @@ locals {
 
   ############################################################
   # VPC CNI: Custom networking env (default + user overrides)
-  # Default enables ENIConfig usage; users extend/override with var.vpc_cni_env
   ############################################################
   vpc_cni_env = merge(
     { AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG = "true" },
@@ -34,7 +35,9 @@ locals {
     )
   }
 
-  # Base add-ons (we manage all via aws_eks_addon; EKS module is disabled)
+  ############################################################
+  # Base add-ons (we manage all via aws_eks_addon)
+  ############################################################
   _addons_base = merge(
     local.vpc_cni_addon,
 
@@ -106,4 +109,51 @@ locals {
     local._addons_base,
     var.cluster_addons_extra
   )
+
+  ############################################################
+  # ENIConfig multi-doc YAML (one per AZ)
+  ############################################################
+  eni_configs_yaml = join("\n---\n", [
+    for az, subnet_id in var.pod_subnet_ids_by_az : yamlencode({
+      apiVersion = "crd.k8s.amazonaws.com/v1alpha1"
+      kind       = "ENIConfig"
+      metadata = {
+        name = az
+      }
+      spec = {
+        securityGroups = [var.pod_eni_security_group_id]
+        subnet         = subnet_id
+      }
+    })
+  ])
+}
+
+############################################################
+# Write the rendered ENIConfig YAML
+############################################################
+resource "local_file" "eni_configs" {
+  count    = length(var.pod_subnet_ids_by_az) > 0 && var.pod_eni_security_group_id != "" ? 1 : 0
+  filename = "${path.module}/eni-configs.yaml"
+  content  = trimspace(local.eni_configs_yaml)
+}
+
+############################################################
+# Apply ENIConfigs after control plane + vpc-cni are ready
+############################################################
+resource "null_resource" "apply_eni_configs" {
+  count = length(var.pod_subnet_ids_by_az) > 0 && var.pod_eni_security_group_id != "" ? 1 : 0
+
+  depends_on = [
+    null_resource.wait_gate, # from addons.tf
+    aws_eks_addon.vpc_cni    # from cni-config.tf
+  ]
+
+  triggers = {
+    sha = sha256(local_file.eni_configs[0].content)
+  }
+
+  provisioner "local-exec" {
+    command     = "kubectl apply -f ${local_file.eni_configs[0].filename}"
+    interpreter = ["bash", "-lc"]
+  }
 }

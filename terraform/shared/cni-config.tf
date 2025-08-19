@@ -20,7 +20,7 @@ resource "aws_eks_addon" "vpc_cni" {
 
   lifecycle {
     create_before_destroy = true
-    ignore_changes = [configuration_values]
+    ignore_changes        = [configuration_values]
   }
 
   # Reuse the wait_gate defined in addons.tf
