@@ -1,0 +1,4 @@
+Error from server (NotFound): the server could not find the requested resource
+Error from server (NotFound): the server could not find the requested resource
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+WARNING: version difference between client (1.27) and server (1.31) exceeds the supported minor version skew of +/-1

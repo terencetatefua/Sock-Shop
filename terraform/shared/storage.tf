@@ -1,18 +1,25 @@
+############################################
+# EFS StorageClass (managed by EFS CSI add-on)
+# Created only when an EFS FS ID is provided.
+############################################
 resource "kubernetes_storage_class" "efs_sc" {
-  metadata { name = "efs-sc" }
+  count = var.efs_filesystem_id != "" ? 1 : 0
+
+  metadata {
+    name = "efs-sc"
+  }
 
   storage_provisioner = "efs.csi.aws.com"
-  reclaim_policy      = "Retain"
-  volume_binding_mode = "Immediate"
 
   parameters = {
     provisioningMode = "efs-ap"
-    fileSystemId     = aws_efs_file_system.main.id
-    directoryPerms   = "700"
+    fileSystemId     = var.efs_filesystem_id
+    directoryPerms   = "750"
   }
 
-  depends_on = [
-    helm_release.aws_efs_csi_driver,
-    aws_efs_file_system.main
-  ]
+  reclaim_policy      = "Retain"
+  volume_binding_mode = "WaitForFirstConsumer"
+
+  # Static dependency only; no dynamic concat/conditionals allowed
+  depends_on = [null_resource.wait_gate]
 }

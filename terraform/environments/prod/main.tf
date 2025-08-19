@@ -1,6 +1,5 @@
 module "shared" {
-  source = "../../shared"
-
+  source                    = "../../shared"
   region                    = var.region
   environment               = var.environment
   eks_cluster_name          = var.eks_cluster_name

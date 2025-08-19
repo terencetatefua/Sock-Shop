@@ -10,3 +10,5 @@ expose_zipkin              = false
 enable_specific_nodeports  = false
 
 enable_rds = true  # typical for prod (Aurora)
+
+aws_account_id = "975050147953" #imput your own AWS Account ID
