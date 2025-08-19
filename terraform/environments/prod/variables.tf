@@ -181,10 +181,4 @@ variable "pod_eni_security_group_id" {
   default     = ""
 }
 
-############################################
-# Cluster bootstrap wait trigger
-############################################
-variable "wait_for_cluster_dependency" {
-  description = "Trigger to make addons wait until the cluster/kubeconfig is ready."
-  type        = any
-}
+
