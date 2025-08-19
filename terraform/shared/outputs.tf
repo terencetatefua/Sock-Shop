@@ -52,6 +52,13 @@ output "rds_reader_endpoint" {
   description = "Aurora reader endpoint (null if enable_rds=false)"
 }
 
+output "enable_rds_effective" {
+  value       = local.enable_rds_effective
+  description = "Whether RDS is enabled inside the shared module (computed)."
+}
+
+
+
 ############################################
 # IRSA Roles (emit variables only to avoid referencing undeclared resources)
 ############################################

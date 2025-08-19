@@ -1,3 +1,4 @@
+# terraform/environments/prod/main.tf
 module "shared" {
   source                    = "../../shared"
   region                    = var.region
@@ -8,5 +9,5 @@ module "shared" {
   tags                      = var.tags
   expose_zipkin             = var.expose_zipkin
   enable_specific_nodeports = var.enable_specific_nodeports
-  enable_rds                = var.enable_rds
+  enable_rds                = var.enable_rds   # ⬅️ must be here
 }

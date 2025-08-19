@@ -1,0 +1,148 @@
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_carts_db: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_iam_policy.ebs_csi_managed: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_user_db: Reading...[0m[0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_region.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.data.aws_caller_identity.current[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/sockshop-prod/cluster][0m
+[0m[1mmodule.shared.module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0ed4b12995b71ae8f][0m
+[0m[1mmodule.shared.aws_kms_key.efs: Refreshing state... [id=768cfe6d-3bda-4a90-92ab-4a942deb50c1][0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_region.current: Read complete after 0s [id=us-east-2][0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_orders_db: Reading...[0m[0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_caller_identity.current: Read complete after 0s [id=975050147953][0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.shared.data.aws_iam_policy.cni_managed: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 0s [id=975050147953][0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799][0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.secretsmanager_read: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.secretsmanager_read: Read complete after 0s [id=1681655091][0m
+[0m[1mmodule.shared.data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=975050147953][0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mysql_catalogue_db: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_caller_identity.current: Read complete after 0s [id=975050147953][0m
+[0m[1mmodule.shared.module.eks.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1mmodule.shared.data.aws_iam_policy.efs_csi_managed: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.aws_iam_role.this[0]: Refreshing state... [id=sockshop-prod-cluster-20250819111437625300000001][0m
+[0m[1mmodule.shared.aws_iam_policy.secretsmanager_read: Refreshing state... [id=arn:aws:iam::975050147953:policy/irsa-secretsmanager-read-prod][0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_orders_db: Read complete after 0s [id=sockshop/mongodb/orders-db|AWSCURRENT][0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_session_context.current[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_session_context.current[0]: Read complete after 0s [id=arn:aws:iam::975050147953:user/tamispa][0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.eks_admin_assume: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.eks_admin_assume: Read complete after 0s [id=2993935697][0m
+[0m[1mmodule.shared.aws_efs_file_system.main: Refreshing state... [id=fs-07ac6a56f872e7745][0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_carts_db: Read complete after 0s [id=sockshop/mongodb/carts-db|AWSCURRENT][0m
+[0m[1mmodule.shared.aws_iam_role.eks_admin: Refreshing state... [id=eks-admin][0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mongo_user_db: Read complete after 0s [id=sockshop/mongodb/user-db|AWSCURRENT][0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_policy_document.custom[0]: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_secretsmanager_secret_version.mysql_catalogue_db: Read complete after 0s [id=sockshop/mysql/catalogue-db|AWSCURRENT][0m
+[0m[1mmodule.shared.module.eks.data.aws_iam_policy_document.custom[0]: Read complete after 0s [id=513122117][0m
+[0m[1mmodule.shared.module.eks.aws_iam_policy.custom[0]: Refreshing state... [id=arn:aws:iam::975050147953:policy/sockshop-prod-cluster-20250819111437625300000002][0m
+[0m[1mmodule.shared.data.aws_iam_policy.cni_managed: Read complete after 0s [id=arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy][0m
+[0m[1mmodule.shared.data.aws_iam_policy.efs_csi_managed: Read complete after 0s [id=arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy][0m
+[0m[1mmodule.shared.data.aws_iam_policy.ebs_csi_managed: Read complete after 0s [id=arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy][0m
+[0m[1mmodule.shared.aws_iam_role_policy_attachment.eks_admin_attach: Refreshing state... [id=eks-admin-20250819111438528000000003][0m
+[0m[1mmodule.shared.module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=sockshop-prod-cluster-20250819111437625300000001-20250819111438761700000005][0m
+[0m[1mmodule.shared.module.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Refreshing state... [id=sockshop-prod-cluster-20250819111437625300000001-20250819111438761700000004][0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=3398778590][0m
+[0m[1mmodule.shared.module.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=df6106c6-892a-425d-ac56-fbb7520ef991][0m
+[0m[1mmodule.shared.module.eks.aws_iam_role_policy_attachment.custom[0]: Refreshing state... [id=sockshop-prod-cluster-20250819111437625300000001-20250819111438819900000006][0m
+[0m[1mmodule.shared.module.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/sockshop-prod][0m
+[0m[1mmodule.shared.module.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::975050147953:policy/sockshop-prod-cluster-ClusterEncryption20250819111459048700000009][0m
+[0m[1mmodule.shared.module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=sockshop-prod-cluster-20250819111437625300000001-2025081911145960390000000a][0m
+[0m[1mmodule.shared.module.vpc.aws_vpc_ipv4_cidr_block_association.this[0]: Refreshing state... [id=vpc-cidr-assoc-0746c6393974bf798][0m
+[0m[1mmodule.shared.module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-076a84938eedd4702][0m
+[0m[1mmodule.shared.module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-08d0234a318e8c534][0m
+[0m[1mmodule.shared.module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-061db80fb81afd19c][0m
+[0m[1mmodule.shared.module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-03b10fb68910e89bd][0m
+[0m[1mmodule.shared.aws_security_group.lb_public: Refreshing state... [id=sg-052d5a0c764aa26c2][0m
+[0m[1mmodule.shared.module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0614373e0b30bd315][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-0098cea484a141eb2][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-049755caac87f7024][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-03def7a6fd320d89d][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-072cc03dae2e27f3c][0m
+[0m[1mmodule.shared.module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0a97043ada20db871][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-00b79e267d55eabbe][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-066deb5b350b00bc8][0m
+[0m[1mmodule.shared.module.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0d6e7b82db3c8737b][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-08faa54cd56e4030b][0m
+[0m[1mmodule.shared.aws_security_group_rule.lb_ingress_https: Refreshing state... [id=sgrule-1217817204][0m
+[0m[1mmodule.shared.aws_security_group_rule.lb_ingress_http: Refreshing state... [id=sgrule-1659699637][0m
+[0m[1mmodule.shared.aws_security_group_rule.lb_egress_all: Refreshing state... [id=sgrule-1866622425][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-1567793555][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-2634228289][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-2665025021][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-3589804348][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-3975262898][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-3911451159][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-4180476540][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-2934821119][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-543581569][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-4202184246][0m
+[0m[1mmodule.shared.module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-096fd41dd1336f38a][0m
+[0m[1mmodule.shared.aws_security_group.efs: Refreshing state... [id=sg-00dad5e884e86ae8b][0m
+[0m[1mmodule.shared.aws_security_group_rule.nodes_nodeport_from_lb: Refreshing state... [id=sgrule-3291248769][0m
+[0m[1mmodule.shared.module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-1584551937][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-0d054866de473e763][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0f96bb84206621945][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-039bfea097bdb5f3f][0m
+[0m[1mmodule.shared.module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-08faa54cd56e4030b1080289494][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0514d6ff9bcf88b92][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0f7d59a535a69d75f][0m
+[0m[1mmodule.shared.module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0b97fa8b8373b8b23][0m
+[0m[1mmodule.shared.aws_efs_mount_target.private["us-east-2a"]: Refreshing state... [id=fsmt-0a0fe745d942a9504][0m
+[0m[1mmodule.shared.aws_efs_mount_target.private["us-east-2b"]: Refreshing state... [id=fsmt-089bd25532dc67276][0m
+[0m[1mmodule.shared.aws_efs_mount_target.private["us-east-2c"]: Refreshing state... [id=fsmt-075ea85492956ef58][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.shared.module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=sockshop-prod][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_iam_role.this[0]: Refreshing state... [id=ng-eks-node-group-2025081911150123640000000d][0m
+[0m[1mmodule.shared.module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-0daa447b8f6490ecb][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].data.aws_caller_identity.current: Read complete after 0s [id=975050147953][0m
+[0m[1mmodule.shared.module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-0098cea484a141eb21080289494][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=ng-eks-node-group-2025081911150123640000000d-2025081911150181170000000e][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=ng-eks-node-group-2025081911150123640000000d-2025081911150181770000000f][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=ng-eks-node-group-2025081911150123640000000d-20250819111501863100000010][0m
+[0m[1mmodule.shared.module.eks.aws_ec2_tag.cluster_primary_security_group["Owner"]: Refreshing state... [id=sg-0cd02696310913d71,Owner][0m
+[0m[1mmodule.shared.module.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Refreshing state... [id=sg-0cd02696310913d71,Project][0m
+[0m[1mmodule.shared.module.eks.time_sleep.this[0]: Refreshing state... [id=2025-08-19T11:26:46Z][0m
+[0m[1mmodule.shared.module.eks.data.tls_certificate.this[0]: Reading...[0m[0m
+[0m[1mmodule.shared.aws_eks_access_entry.current_user: Refreshing state... [id=sockshop-prod:arn:aws:iam::975050147953:user/tamispa][0m
+[0m[1mmodule.shared.aws_eks_access_entry.tf_admin: Refreshing state... [id=sockshop-prod:arn:aws:iam::975050147953:role/eks-admin][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=4084760524343195749][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_launch_template.this[0]: Refreshing state... [id=lt-0224795c5b89a0be1][0m
+[0m[1mmodule.shared.module.eks.module.eks_managed_node_group["ng"].aws_eks_node_group.this[0]: Refreshing state... [id=sockshop-prod:ng-20250819112652682700000017][0m
+[0m[1mmodule.shared.module.eks.data.tls_certificate.this[0]: Read complete after 0s [id=0a759b1370f2328d0bd5dd3ac81215f4c3398ef8][0m
+[0m[1mmodule.shared.module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::975050147953:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/5E1A801158E673C920DDC3F515251020][0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.irsa_trust: Reading...[0m[0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.shared.data.aws_iam_policy_document.irsa_trust: Read complete after 0s [id=529689222][0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=916424666][0m
+[0m[1mmodule.shared.aws_iam_role.irsa_efs_csi: Refreshing state... [id=sockshop-prod-irsa-efs-csi][0m
+[0m[1mmodule.shared.aws_iam_role.irsa_vpc_cni: Refreshing state... [id=sockshop-prod-irsa-vpc-cni][0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.aws_iam_role.this[0]: Refreshing state... [id=irsa-secretsmanager-prod][0m
+[0m[1mmodule.shared.aws_eks_access_policy_association.current_user_admin: Refreshing state... [id=sockshop-prod#arn:aws:iam::975050147953:user/tamispa#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy][0m
+[0m[1mmodule.shared.null_resource.wait_gate: Refreshing state... [id=4124024736361664392][0m
+[0m[1mmodule.shared.aws_eks_addon.vpc_cni: Refreshing state... [id=sockshop-prod:vpc-cni][0m
+[0m[1mmodule.shared.aws_eks_addon.others["aws-efs-csi-driver"]: Refreshing state... [id=sockshop-prod:aws-efs-csi-driver][0m
+[0m[1mmodule.shared.aws_eks_addon.others["eks-pod-identity-agent"]: Refreshing state... [id=sockshop-prod:eks-pod-identity-agent][0m
+[0m[1mmodule.shared.aws_eks_addon.others["snapshot-controller"]: Refreshing state... [id=sockshop-prod:snapshot-controller][0m
+[0m[1mmodule.shared.aws_eks_access_policy_association.tf_admin_admin: Refreshing state... [id=sockshop-prod#arn:aws:iam::975050147953:role/eks-admin#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy][0m
+[0m[1mmodule.shared.module.irsa_secrets_manager.aws_iam_role_policy_attachment.this["secrets_read"]: Refreshing state... [id=irsa-secretsmanager-prod-20250819112618681900000014][0m
+[0m[1mmodule.shared.aws_iam_role_policy_attachment.irsa_vpc_cni_attach: Refreshing state... [id=sockshop-prod-irsa-vpc-cni-20250819112618675900000013][0m
+[0m[1mmodule.shared.aws_iam_role_policy_attachment.irsa_efs_csi_attach: Refreshing state... [id=sockshop-prod-irsa-efs-csi-20250819112618636800000012][0m
+[0m[1mnull_resource.wait_for_cluster: Refreshing state... [id=4310873216204114807][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

@@ -30,3 +30,12 @@ output "rds_endpoint" {
   description = "RDS DB endpoint"
 }
 
+output "rds_reader_endpoint" {
+  value       = module.shared.rds_reader_endpoint
+  description = "Aurora reader endpoint (null if enable_rds=false)"
+}
+
+output "shared_enable_rds_effective" {
+  value       = module.shared.enable_rds_effective
+  description = "Pass-through flag from shared module (debug)."
+}

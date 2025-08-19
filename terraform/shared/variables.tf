@@ -44,11 +44,6 @@ variable "enable_specific_nodeports" {
   default = false
 }
 
-variable "enable_rds" {
-  type    = bool
-  default = false
-}
-
 ############################################
 # API access (public CIDRs for bootstrap)
 ############################################
@@ -193,3 +188,34 @@ variable "efs_filesystem_id" {
   default     = ""
 }
 
+variable "enable_rds" {
+  type    = bool
+  default = false
+}
+
+# Pick ONE source for credentials: either vars or a secret (recommended: secret)
+variable "rds_master_username" {
+  description = "Aurora master username if not using Secrets Manager"
+  type        = string
+  default     = ""
+}
+
+variable "rds_master_password" {
+  description = "Aurora master password if not using Secrets Manager"
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
+variable "rds_master_secret_arn" {
+  description = "Secrets Manager ARN holding {username,password}. If set, overrides the plain vars."
+  type        = string
+  default     = ""
+}
+
+# Optional KMS key for RDS encryption (fallback to default AWS-managed if empty)
+variable "rds_kms_key_arn" {
+  description = "KMS key ARN for Aurora encryption. Leave empty to use AWS-managed."
+  type        = string
+  default     = ""
+}
